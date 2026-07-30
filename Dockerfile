@@ -49,3 +49,6 @@ RUN \
 
 COPY /branding /etc/s6-overlay/s6-rc.d/init-adduser/branding
 COPY /root /
+
+ENV DISPLAY=:1
+ENV NO_FULL=true

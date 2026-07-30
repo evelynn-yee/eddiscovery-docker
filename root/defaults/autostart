@@ -1,2 +1,14 @@
+#!/bin/bash
+set -e
+
+export DISPLAY=${DISPLAY:-:1}
+
+for i in $(seq 1 20); do
+    if xdpyinfo -display "$DISPLAY" >/dev/null 2>&1; then
+        break
+    fi
+    sleep 1
+done
+
 cd /EDDiscovery
-mono --debug EDDiscovery.exe
+exec mono --debug EDDiscovery.exe
